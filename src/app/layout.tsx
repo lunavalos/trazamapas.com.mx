@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Trazamapas | Trazando tu próximo destino",
   description: "Estamos preparando una experiencia única para ayudarte a trazar y planificar tus viajes más memorables. Muy pronto.",
   keywords: ["Trazamapas", "agencia de viajes", "turismo", "viajes a medida", "planificador de viajes"],
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
