@@ -1,0 +1,69 @@
+// Tokens de Diseño Semánticos para Trazamapas
+// Basados en los colores corporativos oficiales.
+
+:root {
+  color-scheme: light;
+
+  // Tipografías
+  --font-family-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: var(--font-outfit), var(--font-family-sans);
+
+  // Colores Oficiales de la Marca
+  --clr-brand-primary: #2C0054;     // Morado profundo
+  --clr-brand-secondary: #F4B92A;   // Amarillo dorado vibrante
+
+  // Variaciones de los colores de la marca para fondos y contrastes
+  // Light Mode (Arena/Lavanda muy claro)
+  --clr-bg-light: oklch(from var(--clr-brand-primary) 98% 0.01 h);
+  --clr-card-light: oklch(100% 0 0);
+  --clr-text-light-mode: oklch(from var(--clr-brand-primary) 20% 0.06 h);
+  --clr-text-muted-light-mode: oklch(from var(--clr-brand-primary) 50% 0.04 h);
+
+  // Dark Mode (Midnight morado profundo)
+  --clr-bg-dark: oklch(from var(--clr-brand-primary) 12% 0.04 h);
+  --clr-card-dark: oklch(from var(--clr-brand-primary) 17% 0.05 h);
+  --clr-text-dark-mode: oklch(96% 0.01 240);
+  --clr-text-muted-dark-mode: oklch(75% 0.02 240);
+
+  // Tokens Semánticos Permanentes (Fondo Claro)
+  --color-bg-page: #ffffff;
+  --color-bg-card: rgba(255, 255, 255, 0.94);
+  --color-text-primary: var(--clr-text-light-mode);
+  --color-text-muted: var(--clr-text-muted-light-mode);
+  
+  // Acentos
+  --color-accent: var(--clr-brand-secondary);
+  --color-accent-primary: var(--clr-brand-primary);
+  --color-accent-gold: var(--clr-brand-secondary);
+
+  // Bordes y Resplandores
+  --color-border: oklch(from var(--clr-brand-primary) 80% 0.04 h / 30%);
+  --color-border-glow: oklch(from var(--clr-brand-secondary) 75% 0.12 h / 10%);
+  --color-focus-ring: var(--clr-brand-secondary);
+
+  // Espaciados Fluidos (clamp)
+  --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --space-sm: clamp(0.8rem, 0.7rem + 0.5vw, 1.2rem);
+  --space-md: clamp(1.2rem, 1rem + 1vw, 2rem);
+  --space-lg: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  --space-xl: clamp(3rem, 2rem + 4vw, 6rem);
+
+  // Tamaños de Fuente Fluidos
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  --font-size-base: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.5vw, 1.35rem);
+  --font-size-xl: clamp(1.35rem, 1.2rem + 1vw, 1.85rem);
+  --font-size-2xl: clamp(1.85rem, 1.5rem + 1.5vw, 2.75rem);
+  --font-size-3xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+
+  // Bordes y Efectos
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px oklch(0% 0 0 / 8%);
+  --shadow-md: 0 8px 24px oklch(0% 0 0 / 12%);
+  --shadow-lg: 0 16px 48px oklch(0% 0 0 / 18%);
+}

@@ -1,0 +1,109 @@
+@use "./tokens.scss" as *;
+
+// Reset global y configuraciones básicas
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: #ffffff !important;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+
+  // Patrón de fondo proporcionado por el usuario (bg-pattern.webp)
+  background-image: url("/images/bg-pattern.webp") !important;
+  background-repeat: repeat !important;
+  background-position: calc(50% + var(--bg-offset-x, 0px)) calc(50% + var(--bg-offset-y, 0px)) !important;
+  background-size: 800px !important;
+  transition: background-position 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+  // Overlay blanco semi-transparente para suavizar el patrón
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    pointer-events: none;
+  }
+}
+
+// Estilos de tipografía y encabezados
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    color: var(--color-accent-primary);
+  }
+}
+
+// Gestión de foco accesible según la guía de CSS
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 4px;
+}
+
+// Desactivar animaciones pesadas para usuarios que prefieren movimiento reducido
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+// Estilos de barra de desplazamiento modernos (scrollbar-color)
+body {
+  scrollbar-color: var(--color-accent) var(--color-bg-page);
+  scrollbar-width: thin;
+}
+
+// Estilización de selección de texto
+::selection {
+  background-color: var(--color-accent);
+  color: var(--clr-brand-primary);
+}
